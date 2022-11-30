@@ -1,0 +1,19 @@
+.textos {
+    font-weight: bold !important;
+}
+
+.imagem{
+    background-image: url(https://cf.shopee.com.br/file/92cf5001949600a27c75e613142a0eac);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}
+.text-decorator-none {
+    text-decoration: none;
+}
