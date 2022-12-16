@@ -1,39 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Home from './paginas/home/Home';
-import { Grid } from '@material-ui/core';
+
+import './App.css';
+
+import { Provider } from 'react-redux';
+
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 import Navbar from './componetes/estaticos/navbar/Navbar';
-import Footer from './componetes/estaticos/footer/Footer';
 import Login from './paginas/Login/Login';
+import ListaTema from './tema/cadastroTemas/deletarTemas/listaTema/ListaTema';
+import ListaPostagem from './componetes/estaticos/cadastroPosts/deletarPostagens/listaPostagens/listaPostagens';
+import CadastroPost from './componetes/estaticos/CadastroPosts';
+import DeletarTema from './tema/cadastroTemas/deletarTemas/DeletarTemas';
+import Footer from './componetes/estaticos/footer/Footer';
+import DeletarPostagem from './componetes/estaticos/cadastroPosts/deletarPostagens/deletarPostagem';
+import store from './store/tokens/Store';
+
 
 
 function App() {
   return (
-
-    <>
+    <Provider store={store}>
+      <ToastContainer />
       <Router>
         <Navbar />
-        <Routes>
+       
+          <div style={{ minHeight: '100vh' }}>
+          <Routes>
+
+            <Route path="/" element={<Login />} />
+
+            <Route path="/login" element={<Login />} />
+
+            <Route path="/home" element={<Home />} />
+
+            <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+
+            <Route path="/temas" element={<ListaTema />} />
+
+            <Route path="/posts" element={<ListaPostagem />} />
+
+            <Route path="/formularioPostagem" element={<CadastroPost />} />
+
+            <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
 
 
-          <Route path='/home' element={<Home />} />
+            <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
 
-          <Route path='/login' element={<Login />} />
-
-        </Routes>
+            <Route path="/deletarTema/:id" element={<DeletarTema />} />
+            </Routes>
+          </div>
+      
         <Footer />
-
       </Router>
-
-
-
-
-
-
-
-    </>
+    </Provider>
   );
 }
+
 export default App;

@@ -12,14 +12,14 @@
 }
 
 .caixa {
-    background-color: blueviolet;
+    background-color: rgb(226, 43, 156);
 }
 .botao {
     border-color: white !important;
-    background-color: #3F51B5;
+    background-color: #b53f92;
     color: white !important;
 }
 
 .postagens {
-    background-color: blueviolet;
+    background-color: rgb(226, 43, 198);
 }
